@@ -64,6 +64,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers("/auth/**",  "/refresh").permitAll()
+                //add more 5.1 event without login
+                .antMatchers(HttpMethod.GET,"/events").permitAll()
+                //add more 5.2 organizer
+                .antMatchers(HttpMethod.GET,"/organizers").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
                 .anyRequest().authenticated();

@@ -61,7 +61,7 @@ public class User {
 	@Builder.Default
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Authority> authorities = new ArrayList<>();
-    
+
     @OneToOne
     Organizer organizer;
 
